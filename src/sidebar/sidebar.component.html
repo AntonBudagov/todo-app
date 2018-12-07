@@ -1,0 +1,25 @@
+<ul class="nav-container">
+  <li  routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" *ngFor="let menuItem of menuItems" class="{{menuItem.class}}">
+    <a class="nav-container__link" mat-button routerLink="popular-films" [color]="'warn'" [routerLink]="[menuItem.path]">
+        <i class="material-icons">{{menuItem.icon}}</i>
+        <span>{{menuItem.title}}</span>
+    </a>
+  </li>
+</ul>
+
+<div class="filter">
+    <mat-form-field class="example-full-width">
+        <input matInput placeholder="Search" [formControl]="autoCompleteVal">
+    </mat-form-field>
+    <mat-form-field>
+        <mat-select placeholder="Date" [formControl]="selectCompleteVal" [disabled]="false">
+            <mat-option [value]="'2017-24-12'">
+                2017-24-12
+            </mat-option>
+            <mat-option [value]="'2018-24-12'">
+                2018-24-12
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+
+</div>
